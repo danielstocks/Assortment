@@ -1,0 +1,122 @@
+body {
+  font: normal 13px/1.2 Raleway, "Helvetica Neue", Arial, sans-serif;
+}
+
+a:visited,
+a:link {
+  color: rgb(100,100,100);
+  text-decoration: none;
+}
+
+a:hover{ color: rgba(0,84,164,1) }
+a.active { color: rgba(100,204,164,1) }
+nav a {
+  margin-right: 12px;
+  display: inline-block;
+}
+nav a:last-child {
+  margin-right:0;
+}
+#controls {
+  position: fixed;
+  top:54px;
+  left: 12px;
+}
+#controls label,
+#controls a {
+  font-family: arial, sans-serif;
+  float:left;
+  margin-right: 3px;
+  background: #222;
+  background:rgba(34,34,34,0.7);
+  display: inline-block;
+  padding: 3px 6px;
+  font-size: 10px;
+  color: #fff;
+  text-transform:uppercase;
+}
+#controls input {
+  font-size: 9px;
+  margin:0 3px;
+  border: 0;
+  padding: 0px 2px;
+}
+#controls a:hover {opacity:1}
+#chart { margin-top: 40px;}
+#top {
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+
+  overflow:hidden;
+  height: 42px;
+  box-sizing: border-box;
+  padding: 14px;
+  width: 100%;
+  position:fixed;
+  z-index: 100;
+  border-bottom: 1px solid #fff;
+  box-shadow: 0px 1px 1px rgba(100,100,100,0.5);
+
+}
+#top h1 {
+  float: left;
+  text-transform: uppercase;
+  margin-right: 18px;
+  text-shadow: 1px 1px 1px #fff;
+}
+#select {
+  float: left;
+}
+#aux {
+  float: right;
+}
+#about {
+  display: none;
+  z-index: 100;
+  top: 20%;
+  left:20%;
+  right:20%;
+  padding: 2em;
+  position: fixed;
+  background: rgba(255,255,255,0.8);
+}
+.about #chart {
+ -webkit-filter: blur(3px);
+ -moz-filter: blur(3px);
+ -ms-filter: blur(3px);
+ -o-filter: blur(3px);
+ filter: blur(3px);
+ filter: url(#blur);
+ filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+
+}
+.about #controls { display: none; }
+.about #about { display: block; }
+
+#about h2 {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 1em;
+}
+#about p {
+  margin: 0 0 1em;
+}
+#about a { color: rgba(0,84,164,1) }
+
+.ico.octo {
+  text-indent: -9999px;
+  background: url("../img/octo.png");
+  background-size: 15px;
+  margin-right: 3px;
+  width: 15px;
+  height: 15px;
+  position:relative;
+  top:-1px;
+  float:left;
+}

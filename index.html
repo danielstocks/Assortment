@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assortment | Sorting algorithms viusalized</title>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+<div id="top">
+  <h1><a href="">Assortment</a></h1>
+  <nav id="select">
+    <a href="#quick" id="nav-quick">Quick</a>
+    <a href="#bubble" id="nav-bubble">Bubble</a>
+    <a href="#selection" id="nav-selection">Selection</a>
+    <a href="#insertion" id="nav-insertion">Insertion</a>
+  </nav>
+  <nav id="aux">
+    <a href="#about" id="nav-about">About</a>
+    <a id="github" href="https://github.com/danielstocks/Assortment"><i class="ico octo"></i> View Source</a>
+  </nav>
+</div>
+<canvas id="chart" height="500"></canvas>
+
+<div id="controls">
+  <label># Items<input id="num-items" value="512" size="2"></label>
+  <label>Limit<input id="fps" value="60" size="1">fps</label>
+  <a href="#" id="randomize">reset</a>
+  <a href="#" id="play">play</a>
+</div>
+
+<div id="about">
+<h2>Assortment</h2>
+<p>This is an experiment inspired by <a href="http://panthema.net/2013/sound-of-sorting/">The Sound of Sorting</a>. It's built with HTML5 Canvas/Web Audio/RequestAnimationFrame API's. Therefor it's likely to break in anything other than the latest version of your browser.</p>
+<p>The JavaScript sorting algorithms being used in this project are based on the work of <a href="http://www.nczonline.net/about/">Nicholas C. Zakas</a>. Take a look at his <a href="https://github.com/nzakas/computer-science-in-javascript">computer-science-in-javascript</a> repository. I also highly reccomend reading his <a href="http://www.nczonline.net/blog/2009/05/26/computer-science-in-javascript-bubble-sort/">blog articles</a> on the subject.
+<p>The full source code to this project can be found in the <a href="https://github.com/danielstocks/Assortment">Assortment GitHub repository</a>. Improvements and other contributions are highly welcome.</p>
+
+<p>If you wish to contact me please send an email to daniel (at) webcloud (dot) se</p>
+</div>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="0" width="0">
+  <defs>
+    <filter id="blur" x="0" y="0">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+</svg>
+
+
+<!-- Libs -->
+<script src="js/vendor/EventEmitter.js"></script>
+<script src="js/util/range.js"></script>
+<script src="js/util/shuffle.js"></script>
+<script src="js/util/randomArray.js"></script>
+<!-- Sorting -->
+<script src="js/sorting/bubbleSort.js"></script>
+<script src="js/sorting/mergeSort.js"></script>
+<script src="js/sorting/selectionSort.js"></script>
+<script src="js/sorting/quickSort.js"></script>
+<script src="js/sorting/insertionSort.js"></script>
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/crazyMode.js"></script>
+<script src="js/controls.js"></script>
+<script src="js/animation.js"></script>
+<script>
+init();
+</script>
+</body>
+</html>
