@@ -1,6 +1,6 @@
 (function(exports) {
 
-window.AudioContext = window.AudioContext||window.webkitAudioContext
+window.AudioContext = window.AudioContext || window.webkitAudioContext
 
 var minFreq = 150;
 var maxFreq = 500;
@@ -13,8 +13,8 @@ pannerNode.setPosition(10, 5, 0);
 var pannerNode2 = context.createPanner();
 pannerNode2.setPosition(-10, -5, 0);
 
-var gainNode = context.createGainNode();
-var gainNode2 = context.createGainNode();
+var gainNode = context.createGain();
+var gainNode2 = context.createGain();
 
 gainNode.connect(pannerNode);
 gainNode.gain.value = 0.0;
@@ -45,7 +45,7 @@ sound.draw = function(i) {
   o1.frequency.value = (swaps[i][1] * step) + minFreq;
   o2.frequency.value = (swaps[i][2] * step) + minFreq;
   window.setTimeout(function() {
-    o1.stop();
+    o1.stop(0);
     o1.disconnect();
     o2.disconnect();
   }, 50);
