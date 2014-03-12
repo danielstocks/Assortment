@@ -6,6 +6,6 @@
  */
 
 function randomArray(n) {
-  n = n || parseInt(document.getElementById("num-items").value) || 512
+  n = n || parseInt(document.getElementById("num-items").value) || 256
   return shuffle(range(n));
 }

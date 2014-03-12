@@ -3,7 +3,17 @@
 var controls = {
   randomize : document.getElementById("randomize"),
   play : document.getElementById("play"),
+  mute : document.getElementById("mute"),
   items : document.getElementById("num-items")
+}
+
+controls.mute.onclick = function(e) {
+  e.preventDefault();
+  if(this.innerHTML.trim() == "mute") {
+    state.trigger("sound-mute");
+  } else {
+    state.trigger("sound-unmute");
+  }
 }
 
 controls.items.onchange = function() {
@@ -49,6 +59,13 @@ state.on("animation-pause", function() {
 });
 state.on("animation-play", function() {
   controls.play.innerHTML = "pause";
+});
+
+state.on("sound-mute", function() {
+  controls.mute.innerHTML = "unmute";
+});
+state.on("sound-unmute", function() {
+  controls.mute.innerHTML = "mute";
 });
 
 })(window);
