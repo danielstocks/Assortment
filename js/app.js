@@ -1,9 +1,17 @@
 (function(exports){
 
-var currentList = randomArray();
 var initial = window.location.hash.replace("#","") || "quick";
 var sort = window[initial + "Sort"];
 var topBar = document.getElementById("top");
+var numItems = document.getElementById("num-items");
+
+var initialLink = document.getElementById("nav-"+initial);
+initialLink.classList.add("active");
+numItems.value = initialLink.dataset.q
+NodeList.prototype.forEach = Array.prototype.forEach;
+
+
+var currentList = randomArray();
 
 function init() {
   chart.fillScreen();
@@ -28,6 +36,7 @@ topBar.onclick = function(e) {
       el.classList.remove("active");
     });
     e.target.classList.add("active");
+    numItems.value = e.target.dataset.q;
 
     if(e.target.id == "nav-about") {
       document.body.classList.add("about");
@@ -43,9 +52,6 @@ topBar.onclick = function(e) {
     chart.draw();
   }
 }
-
-document.getElementById("nav-"+initial).classList.add("active");
-NodeList.prototype.forEach = Array.prototype.forEach;
 
 window.addEventListener('blur', function() {
   state.trigger("animation-pause");

@@ -11,10 +11,10 @@
 <div id="top">
   <h1><a href="">Assortment</a></h1>
   <nav id="select">
-    <a href="#quick" id="nav-quick">Quick</a>
-    <a href="#bubble" id="nav-bubble">Bubble</a>
-    <a href="#selection" id="nav-selection">Selection</a>
-    <a href="#insertion" id="nav-insertion">Insertion</a>
+    <a href="#quick" data-q="512" id="nav-quick">Quick</a>
+    <a href="#bubble" data-q="64" id="nav-bubble">Bubble</a>
+    <a href="#selection" data-q="128" id="nav-selection">Selection</a>
+    <a href="#insertion" data-q="64" id="nav-insertion">Insertion</a>
   </nav>
   <nav id="aux">
     <a href="#about" id="nav-about">About</a>
@@ -24,7 +24,7 @@
 <canvas id="chart" height="500"></canvas>
 
 <div id="controls">
-  <label># Items<input id="num-items" value="256" size="2"></label>
+  <label># Items<input id="num-items" value="512" size="2"></label>
   <label>Limit<input id="fps" value="60" size="1">fps</label>
   <a href="#" id="randomize">reset</a>
   <a href="#" id="mute">mute</a>
