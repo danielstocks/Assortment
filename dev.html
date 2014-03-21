@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Assortment | Sorting algorithms viusalized</title>
-  <link rel="stylesheet" href="dist/app.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
 <div id="top">
@@ -53,11 +55,28 @@
 </svg>
 
 
-<script src="dist/app.min.js"></script>
-
+<!-- Libs -->
+<script src="js/vendor/EventEmitter.js"></script>
+<script src="js/util/range.js"></script>
+<script src="js/util/shuffle.js"></script>
+<script src="js/util/randomArray.js"></script>
+<!-- Sorting -->
+<script src="js/sorting/bubbleSort.js"></script>
+<script src="js/sorting/mergeSort.js"></script>
+<script src="js/sorting/selectionSort.js"></script>
+<script src="js/sorting/quickSort.js"></script>
+<script src="js/sorting/insertionSort.js"></script>
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/crazyMode.js"></script>
+<script src="js/controls.js"></script>
+<script src="js/animation.js"></script>
 <script>
 init();
-
+</script>
+<script>
 // GA
 if(/webcloud\.se$/.test(window.location.hostname)) {
   var _gaq = _gaq || [];
