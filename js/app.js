@@ -22,6 +22,12 @@ function init() {
   }
 }
 
+document.querySelector("#nom-nom").onclick = function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.body.classList.toggle("nav");
+}
+
 topBar.onclick = function(e) {
 
   if(e.target.id == "github") {

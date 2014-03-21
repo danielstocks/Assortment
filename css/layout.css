@@ -53,7 +53,6 @@ nav a:last-child {
   background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
 
-  overflow:hidden;
   height: 42px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -120,4 +119,41 @@ nav a:last-child {
   position:relative;
   top:-1px;
   float:left;
+}
+
+#nom-nom { display: none; float: right}
+@media screen and (max-width: 620px) {
+  #nom-nom { display: inline-block; }
+  #nav {
+    display: none;
+  }
+  .nav #nav {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+  }
+  #nav a {
+    margin: 4px 0 4px 8px;
+    display: block;
+  }
+}
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.25em;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 0.15em;
+  background: black;
+  box-shadow: 
+    0 0.25em 0 0 black,
+    0 0.5em 0 0 black;
 }
