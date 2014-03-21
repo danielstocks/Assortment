@@ -40,15 +40,29 @@ function osc(type, pan) {
 
 sound.draw = function(i) {
   var step = ((maxFreq - minFreq) / currentList.length);
-  var o1 = osc(1, "left");
-  var o2 = osc(2, "right");
-  o1.frequency.value = (swaps[i][1] * step) + minFreq;
-  o2.frequency.value = (swaps[i][2] * step) + minFreq;
-  window.setTimeout(function() {
-    o1.stop(0);
-    o1.disconnect();
-    o2.disconnect();
-  }, 50);
+  var v1 = (swaps[i][1] * step) + minFreq;
+  var v2 = (swaps[i][2] * step) + minFreq;
+
+  if(isFinite(v1)) {
+    var o1 = osc(1, "left");
+    o1.frequency.value = v1
+  }
+  if(isFinite(v2)) {
+    var o2 = osc(2, "right");
+    o2.frequency.value = v2;
+  }
+  (function(o1, o2) {
+    window.setTimeout(function() {
+      if(o1) {
+      o1.stop(0);
+      o1.disconnect();
+      }
+      if(o2) {
+        o2.stop(0);
+        o2.disconnect();
+      }
+    }, 50);
+  })(o1,o2);
 }
 
 sound.mute = function() {
@@ -57,8 +71,8 @@ sound.mute = function() {
 }
 
 sound.unmute = function() {
-  gainNode.gain.value = 0.05;
-  gainNode2.gain.value = 0.05;
+  gainNode.gain.value = 0.2;
+  gainNode2.gain.value = 0.2;
 }
 
 state.on("sound-mute", sound.mute);
