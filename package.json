@@ -1,0 +1,26 @@
+{
+  "name": "assortment",
+  "version": "1.0.0",
+  "description": "This is an experiment inspired by [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/). It's built with HTML5 Canvas/Web Audio/RequestAnimationFrame API's. Therefor it's likely to break in anything other than the latest version of your browser.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielstocks/Assortment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielstocks/Assortment/issues"
+  },
+  "homepage": "https://github.com/danielstocks/Assortment#readme"
+}
