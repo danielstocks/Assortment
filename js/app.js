@@ -1,4 +1,4 @@
-(function(exports){
+((exports => {
 
 var initial = window.location.hash.replace("#","") || "quick";
 var sort = window[initial + "Sort"];
@@ -22,13 +22,13 @@ function init() {
   }
 }
 
-document.querySelector("#nom-nom").onclick = function(e) {
+document.querySelector("#nom-nom").onclick = e => {
   e.preventDefault();
   e.stopPropagation();
   document.body.classList.toggle("nav");
 }
 
-topBar.onclick = function(e) {
+topBar.onclick = e => {
 
   if(e.target.id == "github") {
     return;
@@ -38,7 +38,7 @@ topBar.onclick = function(e) {
 
     state.trigger("animation-stop");
 
-    topBar.querySelectorAll("a").forEach(function(el) {
+    topBar.querySelectorAll("a").forEach(el => {
       el.classList.remove("active");
     });
     e.target.classList.add("active");
@@ -59,7 +59,7 @@ topBar.onclick = function(e) {
   }
 }
 
-window.addEventListener('blur', function() {
+window.addEventListener('blur', () => {
   state.trigger("animation-pause");
 });
 
@@ -69,4 +69,4 @@ exports.swaps = [];
 exports.currentList = currentList;
 exports.sort = sort;
 
-})(window);
+}))(window);

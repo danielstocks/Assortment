@@ -1,9 +1,8 @@
-(function(exports) {
+((exports => {
 
 function selectionSort(items){
-
-  var len = items.length,
-      min;
+  var len = items.length;
+  var min;
 
   for (i=0; i < len; i++){
 
@@ -36,4 +35,4 @@ function swap(items, firstIndex, secondIndex){
 
 exports.selectionSort = selectionSort
 
-})(window);
+}))(window);

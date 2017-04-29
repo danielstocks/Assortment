@@ -1,4 +1,4 @@
-(function(exports) {
+((exports => {
 
 var controls = {
   randomize : document.getElementById("randomize"),
@@ -16,14 +16,14 @@ controls.mute.onclick = function(e) {
   }
 }
 
-controls.items.onchange = function() {
+controls.items.onchange = () => {
   state.trigger("animation-stop");
   currentList = randomArray();
   state.trigger("new-list");
   chart.draw();
 }
 
-controls.randomize.onclick = function(e) {
+controls.randomize.onclick = e => {
   e.preventDefault();
   state.trigger("animation-stop");
   currentList = randomArray();
@@ -45,27 +45,27 @@ controls.play.onclick = function(e) {
   state.trigger("animation-play", [swaps]);
 }
 
-state.on("new-list", function() {
+state.on("new-list", () => {
   sorted = false;
 });
-state.on("animation-end", function() {
+state.on("animation-end", () => {
   controls.play.innerHTML = "replay";
 });
-state.on("animation-stop", function() {
+state.on("animation-stop", () => {
   controls.play.innerHTML = "play";
 });
-state.on("animation-pause", function() {
+state.on("animation-pause", () => {
   controls.play.innerHTML = "play";
 });
-state.on("animation-play", function() {
+state.on("animation-play", () => {
   controls.play.innerHTML = "pause";
 });
 
-state.on("sound-mute", function() {
+state.on("sound-mute", () => {
   controls.mute.innerHTML = "unmute";
 });
-state.on("sound-unmute", function() {
+state.on("sound-unmute", () => {
   controls.mute.innerHTML = "mute";
 });
 
-})(window);
+}))(window);
