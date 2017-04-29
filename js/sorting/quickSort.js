@@ -1,4 +1,4 @@
-(function(exports) {
+((exports => {
 
 function swap(items, firstIndex, secondIndex){
   var temp = items[firstIndex];
@@ -7,10 +7,9 @@ function swap(items, firstIndex, secondIndex){
   swaps.push([items.slice(0), secondIndex, firstIndex]);
 }
 function partition(items, left, right) {
-
-    var pivot   = items[Math.floor((right + left) / 2)],
-        i       = left,
-        j       = right;
+    var pivot   = items[Math.floor((right + left) / 2)];
+    var i       = left;
+    var j       = right;
 
 
     while (i <= j) {
@@ -59,4 +58,4 @@ function quickSort(items, left, right) {
 
 exports.quickSort = quickSort;
 
-})(window);
+}))(window);

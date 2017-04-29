@@ -1,4 +1,4 @@
-(function(exports) {
+((exports => {
 
 var animation = {};
 var frame;
@@ -16,7 +16,7 @@ document.getElementById("fps").onchange = function() {
   interval = 1000/fps;
 }
 
-animation.start = function(list) {
+animation.start = list => {
   sound.unmute();
   (function animloop(timestamp){
     frame = window.requestAnimationFrame(animloop);
@@ -47,12 +47,12 @@ function rewind() {
   i = 0;
 }
 
-animation.pause = function() {
+animation.pause = () => {
   window.cancelAnimationFrame(frame);
   sound.mute();
 }
 
-animation.stop = function() {
+animation.stop = () => {
   sound.mute();
   window.cancelAnimationFrame(frame);
   frame = null;
@@ -64,4 +64,4 @@ state.on("animation-play", animation.start);
 state.on("animation-stop", animation.stop);
 
 
-})(window);
+}))(window);

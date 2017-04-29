@@ -1,9 +1,14 @@
 function insertionSort(items) {
+    var // number of items in the array
+    len     = items.length;                          // index into sorted section
 
-    var len     = items.length,     // number of items in the array
-        value,                      // the value currently being compared
-        i,                          // index into unsorted section
-        j;                          // index into sorted section
+    var // the value currently being compared
+    value;
+
+    var // index into unsorted section
+    i;
+
+    var j;
     for (i=0; i < len; i++) {
         // store the current value because it may shift later
         value = items[i];

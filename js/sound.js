@@ -1,4 +1,4 @@
-(function(exports) {
+((exports => {
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext
 
@@ -28,14 +28,14 @@ function playOscillator(freq, type, pan) {
     oscillator.stop(context.currentTime + 0.5);
 
     // The sound should last for 250ms
-    setTimeout(function() {
+    setTimeout(() => {
       node.gain.value = 0;
     }, 300);
     return oscillator;
 }
 
 
-sound.draw = function(i) {
+sound.draw = i => {
   var step = ((maxFreq - minFreq) / currentList.length);
   var v1 = (swaps[i][1] * step) + minFreq;
   var v2 = (swaps[i][2] * step) + minFreq;
@@ -47,11 +47,11 @@ sound.draw = function(i) {
   }
 }
 
-sound.mute = function() {
+sound.mute = () => {
   volume = 0;
 }
 
-sound.unmute = function() {
+sound.unmute = () => {
   volume = 0.5;
 }
 
@@ -60,4 +60,4 @@ state.on("sound-unmute", sound.unmute);
 
 exports.sound = sound;
 
-})(window);
+}))(window);

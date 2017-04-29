@@ -1,4 +1,4 @@
-(function(exports){
+((exports => {
 
   var running = false;
   var frame;
@@ -9,16 +9,16 @@
     frame = window.requestAnimationFrame(animate);
   }
   crazyMode = {}
-  crazyMode.start = function() {
+  crazyMode.start = () => {
     if(!running) {
       animate();
     }
     running = true;
   }
-  crazyMode.stop = function() {
+  crazyMode.stop = () => {
     window.cancelAnimationFrame(frame);
     running = false;
   };
   exports.crazyMode = crazyMode;
 
-})(window);
+}))(window);

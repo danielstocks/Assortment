@@ -3,14 +3,14 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 
-gulp.task('minify-css', function() {
+gulp.task('minify-css', () => {
   gulp.src(['css/reset.css','css/*.css'])
     .pipe(minifyCSS(opts))
     .pipe(concat('app.min.css'))
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('compress', function() {
+gulp.task('compress', () => {
   gulp.src([
       'js/vendor/*.js',
       'js/util/*.js',

@@ -49,7 +49,7 @@
 	 */
 	function alias(name) {
 		return function aliasClosure() {
-			return this[name].apply(this, arguments);
+			return this[name](...arguments);
 		};
 	}
 
@@ -137,7 +137,7 @@
 		for (key in listeners) {
 			if (listeners.hasOwnProperty(key) && indexOfListener(listeners[key], listener) === -1) {
 				listeners[key].push(listenerIsWrapped ? listener : {
-					listener: listener,
+					listener,
 					once: false
 				});
 			}
@@ -161,7 +161,7 @@
 	 */
 	proto.addOnceListener = function addOnceListener(evt, listener) {
 		return this.addListener(evt, {
-			listener: listener,
+			listener,
 			once: true
 		});
 	};
@@ -459,9 +459,7 @@
 
 	// Expose the class either via AMD, CommonJS or the global object
 	if (typeof define === 'function' && define.amd) {
-		define(function () {
-			return EventEmitter;
-		});
+		define(() => EventEmitter);
 	}
 	else if (typeof module === 'object' && module.exports){
 		module.exports = EventEmitter;
