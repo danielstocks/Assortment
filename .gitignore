@@ -11,6 +11,8 @@ lcov.info
 *.pid
 *.gz
 
+dist
+
 pids
 logs
 results
