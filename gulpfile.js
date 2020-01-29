@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var minifyCSS = require('gulp-minify-css');
+const cleanCSS = require('gulp-clean-css');
 
 gulp.task('minify-css', function(done) {
   gulp
     .src(['css/reset.css', 'css/*.css'])
-    .pipe(minifyCSS())
+    .pipe(cleanCSS())
     .pipe(concat('app.min.css'))
     .pipe(gulp.dest('dist'));
   done();
